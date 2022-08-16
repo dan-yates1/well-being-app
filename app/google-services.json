@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "91195848061",
-    "project_id": "wellbeingapp-bc024",
-    "storage_bucket": "wellbeingapp-bc024.appspot.com"
+    "project_number": "666264964284",
+    "project_id": "wellbeingapp2-e98c1",
+    "storage_bucket": "wellbeingapp2-e98c1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:91195848061:android:bae5d2c26da079ddbf8814",
+        "mobilesdk_app_id": "1:666264964284:android:eb82d1234c35a12a24d4b9",
         "android_client_info": {
           "package_name": "com.example.wellbeingapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "91195848061-anr8hc3e1akr5h42urrmeqp9og9mtd7v.apps.googleusercontent.com",
+          "client_id": "666264964284-o8qlbghogc6sgbt96pbsnta7tqo2kbc9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDIgdb24mBFg0cKU3Xs-gPwENrIeCcKPIo"
+          "current_key": "AIzaSyA_eb5T_85lcSnfUbhzAoxHXA0rwdcgEVE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "91195848061-anr8hc3e1akr5h42urrmeqp9og9mtd7v.apps.googleusercontent.com",
+              "client_id": "666264964284-o8qlbghogc6sgbt96pbsnta7tqo2kbc9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

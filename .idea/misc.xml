@@ -3,10 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/drawable/activities_custom_textview.xml" value="0.3005" />
+        <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/drawable/bg_custom_textview.xml" value="0.3005" />
+        <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/drawable/button.xml" value="0.2985" />
+        <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/drawable/circle_bg.xml" value="0.3005" />
         <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/drawable/edit_text.xml" value="0.2985" />
+        <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/drawable/ic_check.xml" value="0.3005" />
         <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/drawable/ic_google_icon.xml" value="0.2985" />
         <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/layout/activity_sign_up.xml" value="0.3484375" />
+        <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/layout/activity_sleep.xml" value="0.33" />
+        <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/layout/item_activity.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/dan/Documents/Uni/Year4/MajorProject/WellBeingApp2/app/src/main/res/layout/recycler_view_item.xml" value="0.36231884057971014" />
       </map>
     </option>
   </component>
