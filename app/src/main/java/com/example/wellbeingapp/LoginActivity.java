@@ -54,10 +54,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String password = etPassword.getText().toString().trim();
     }
 
-    private void openSignUpActivity(View view) {
-
-    }
-
     private void initInterface() {
         tvSignUp = findViewById(R.id.signUpTextView);
         tvSignUp.setOnClickListener(this);
