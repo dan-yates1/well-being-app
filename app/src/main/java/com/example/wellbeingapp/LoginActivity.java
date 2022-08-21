@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,10 +28,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mAuth = FirebaseAuth.getInstance();
         // check if user is already signed in
-        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-        if (firebaseUser != null) {
-            //startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            //finish();
+        if (mAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
         }
 
         initInterface();
@@ -50,8 +50,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void login() {
-        String email = etEmail.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
+        mAuth.signInWithEmailAndPassword(etEmail.getText().toString().trim(),
+                        etPassword.getText().toString().trim())
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "User logged in successfully!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(this, MainActivity.class));
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 
     private void initInterface() {

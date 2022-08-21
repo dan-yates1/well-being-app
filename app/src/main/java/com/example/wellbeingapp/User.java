@@ -2,12 +2,13 @@ package com.example.wellbeingapp;
 
 public class User {
     private String name, email, password;
+    private boolean diagnosed;
 
     public User(String name, String email, String password) {
-
         this.name = name;
         this.email = email;
         this.password = password;
+        this.diagnosed = false;
     }
 
     public User() {}
@@ -34,5 +35,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isDiagnosed() {
+        return diagnosed;
+    }
+
+    public void setDiagnosed(boolean diagnosed) {
+        this.diagnosed = diagnosed;
     }
 }
