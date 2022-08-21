@@ -1,11 +1,13 @@
 package com.example.wellbeingapp;
 
-public class Meditation {
+import android.media.Image;
+
+public class Activity {
 
     private String name;
     private String duration;
 
-    public Meditation(String name, String duration) {
+    public Activity(String name, String duration) {
         this.name = name;
         this.duration = duration;
     }

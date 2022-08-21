@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class MeditationAdapter extends RecyclerView.Adapter<MeditationAdapter.ViewHolder> {
 
-    private ArrayList<Meditation> meditationArrayList;
+    private ArrayList<Activity> activityArrayList;
 
     public static class ViewHolder extends  RecyclerView.ViewHolder {
         private TextView title, duration;
@@ -25,8 +25,8 @@ public class MeditationAdapter extends RecyclerView.Adapter<MeditationAdapter.Vi
         }
     }
 
-    public MeditationAdapter(ArrayList<Meditation> meditationArrayList) {
-        this.meditationArrayList = meditationArrayList;
+    public MeditationAdapter(ArrayList<Activity> activityArrayList) {
+        this.activityArrayList = activityArrayList;
     }
 
     @NonNull
@@ -40,12 +40,12 @@ public class MeditationAdapter extends RecyclerView.Adapter<MeditationAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull MeditationAdapter.ViewHolder holder, int position) {
-        holder.title.setText(meditationArrayList.get(position).getName());
-        holder.duration.setText(meditationArrayList.get(position).getDuration());
+        holder.title.setText(activityArrayList.get(position).getName());
+        holder.duration.setText(activityArrayList.get(position).getDuration());
     }
 
     @Override
     public int getItemCount() {
-        return meditationArrayList.size();
+        return activityArrayList.size();
     }
 }

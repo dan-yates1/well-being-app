@@ -1,9 +1,6 @@
 package com.example.wellbeingapp;
 
-import static java.security.AccessController.getContext;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,15 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.google.common.io.LineReader;
-
 import java.util.ArrayList;
 
 public class MeditationActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageButton btnBack;
     private RecyclerView rvMeditation, rvBodyMeditation;
-    private ArrayList<Meditation> meditationList;
+    private ArrayList<Activity> activityList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +29,15 @@ public class MeditationActivity extends AppCompatActivity implements View.OnClic
     private void initRecyclerViews() {
         rvMeditation.setHasFixedSize(true);
         rvMeditation.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        MeditationAdapter adapter = new MeditationAdapter(meditationList);
+        MeditationAdapter adapter = new MeditationAdapter(activityList);
         rvMeditation.setAdapter(adapter);
     }
 
     private void populateMeditationList() {
-        meditationList = new ArrayList<>();
-        meditationList.add(new Meditation("Test 1", "10-minutes"));
-        meditationList.add(new Meditation("Test 2", "15-minutes"));
-        meditationList.add(new Meditation("Test 3", "20-minutes"));
+        activityList = new ArrayList<>();
+        activityList.add(new Activity("Test 1", "10-minutes"));
+        activityList.add(new Activity("Test 2", "15-minutes"));
+        activityList.add(new Activity("Test 3", "20-minutes"));
     }
 
     private void initInterface() {
