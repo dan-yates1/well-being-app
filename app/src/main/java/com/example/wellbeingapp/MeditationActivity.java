@@ -1,20 +1,22 @@
 package com.example.wellbeingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
-public class MeditationActivity extends AppCompatActivity implements View.OnClickListener {
+public class MeditationActivity extends AppCompatActivity implements View.OnClickListener, SelectListener {
 
     private ImageButton btnBack;
     private RecyclerView rvMeditation, rvBodyMeditation;
-    private ArrayList<Activity> activityList;
+    private ArrayList<Activity> meditationList, bodyMeditationList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,21 +25,44 @@ public class MeditationActivity extends AppCompatActivity implements View.OnClic
 
         initInterface();
         populateMeditationList();
-        initRecyclerViews();
+        initMeditationRecyclerView();
+        populateBodyMeditationList();
+        initBodyMeditationRecyclerView();
     }
 
-    private void initRecyclerViews() {
+    private void initBodyMeditationRecyclerView() {
+        rvBodyMeditation.setHasFixedSize(true);
+        rvBodyMeditation.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,
+                DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.rv_divider));
+        rvBodyMeditation.addItemDecoration(dividerItemDecoration);
+        ActivityAdapter adapter = new ActivityAdapter(bodyMeditationList, this);
+        rvBodyMeditation.setAdapter(adapter);
+    }
+
+    private void populateBodyMeditationList() {
+        bodyMeditationList = new ArrayList<>();
+        bodyMeditationList.add(new Meditation("Body Meditation 1", "12-minutes", "body_scan_meditation.mp3"));
+    }
+
+    private void initMeditationRecyclerView() {
         rvMeditation.setHasFixedSize(true);
         rvMeditation.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        MeditationAdapter adapter = new MeditationAdapter(activityList);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,
+                DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.rv_divider));
+        rvMeditation.addItemDecoration(dividerItemDecoration);
+        ActivityAdapter adapter = new ActivityAdapter(meditationList, this);
         rvMeditation.setAdapter(adapter);
     }
 
     private void populateMeditationList() {
-        activityList = new ArrayList<>();
-        activityList.add(new Activity("Test 1", "10-minutes"));
-        activityList.add(new Activity("Test 2", "15-minutes"));
-        activityList.add(new Activity("Test 3", "20-minutes"));
+        meditationList = new ArrayList<>();
+        meditationList.add(new Meditation("Guided Meditation 1", "1-minute", "one_minute_meditation.mp3"));
+        meditationList.add(new Meditation("Guided Meditation 2", "4-minutes", "four_minute_meditation.mp3"));
+        meditationList.add(new Meditation("Guided Meditation 3", "10-minutes", "ten_minute_meditation.mp3"));
+        meditationList.add(new Meditation("Guided Meditation 4", "15-minutes", "fifteen_minute_meditation.mp3"));
     }
 
     private void initInterface() {
@@ -54,5 +79,10 @@ public class MeditationActivity extends AppCompatActivity implements View.OnClic
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public void onItemClicked(Activity activity) {
+        startActivity(new Intent(this, MediaPlayerActivity.class).putExtra("activity", activity));
     }
 }

@@ -1,15 +1,28 @@
 package com.example.wellbeingapp;
 
-import android.media.Image;
+import androidx.annotation.DrawableRes;
 
-public class Activity {
+import java.io.Serializable;
+
+public class Activity implements Serializable {
 
     private String name;
     private String duration;
+    @DrawableRes
+    private int icon = 0; // default
+    private String type = null; // default
 
     public Activity(String name, String duration) {
         this.name = name;
         this.duration = duration;
+    }
+
+    public int getIcon() {
+        return icon;
+    }
+
+    public void setIcon(int icon) {
+        this.icon = icon;
     }
 
     public String getDuration() {
@@ -26,5 +39,13 @@ public class Activity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

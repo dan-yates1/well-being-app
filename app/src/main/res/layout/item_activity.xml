@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="70dp"
     android:paddingVertical="8dp"
-    android:background="@drawable/shadow">
+    android:background="@drawable/drop_shadow"
+    android:id="@+id/clMain">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardView"
@@ -20,18 +21,18 @@
             android:id="@+id/ivActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_meditation"
-            app:tint="@color/blue" />
+            app:srcCompat="@drawable/ic_meditation" />
 
         <TextView
             android:id="@+id/tvActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/inter_semi_bold"
             android:text="Meditation"
             android:textColor="@color/dark_blue"

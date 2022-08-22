@@ -10,6 +10,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 /**
  * Instrumented test, which will execute on an Android device.
  *
@@ -22,5 +24,11 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.wellbeingapp", appContext.getPackageName());
+    }
+
+    @Test
+    public void userSignUp() {
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.createUserWithEmailAndPassword("test12@email.com", "password123");
     }
 }
